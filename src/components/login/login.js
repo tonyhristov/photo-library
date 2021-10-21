@@ -2,6 +2,13 @@ import React, { useContext } from 'react'
 import { useHistory } from 'react-router-dom'
 import UserContext from '../../context'
 import GoogleLogin from 'react-google-login'
+import styled from '@emotion/styled'
+
+const Wrapper = styled.div`
+   margin: auto;
+   margin-left: 47%;
+   margin-top: 25%;
+`
 
 const Login = () => {
    const context = useContext(UserContext)
@@ -13,7 +20,7 @@ const Login = () => {
    }
 
    return (
-      <div>
+      <Wrapper>
          <GoogleLogin
             clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
             buttonText='Log in'
@@ -21,7 +28,7 @@ const Login = () => {
             onFailure={responseGoogle}
             cookiePolicy={'single_host_origin'}
          />
-      </div>
+      </Wrapper>
    )
 }
 

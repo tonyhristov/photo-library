@@ -1,10 +1,18 @@
 import React from 'react'
+import styled from '@emotion/styled'
+
+const HeaderText = styled.h3`
+   float: right;
+   margin-right: 15px;
+   margin-top: 25px;
+`
 
 const PageWrapper = (props) => {
    return (
       <div>
          <header>
-            <h1>{props.user}</h1>
+            <HeaderText>{props.user}</HeaderText>
+            {}
          </header>
          <div>{props.children}</div>
       </div>
